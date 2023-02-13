@@ -39,13 +39,6 @@ export const selectExtraQuote: any = (data: any) => {
       type: SELECT_THIS_EXTRA,
       payload: data,
     });
-    // try {
-    //    const res = await InsuranceDataService.selectExtraQuote(data.id,data); 
-    //  return Promise.resolve(res.data);
-    // } catch (err) {
-    //     console.log(err);
-    // return Promise.reject(err);
-    // }
   }
 };
 
