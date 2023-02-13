@@ -55,23 +55,13 @@ function insuranceReducer(insuranceList = initialState, action: { type: string, 
             console.log('action.payload', action.payload)
             return {
                 ...insuranceList,
-                quote: newQuote[0],
-                addonDetails: [
-                    ...insuranceList.addonDetails,
-                    insuranceList.addonDetails.filter((x: any) =>
-                    (x.title === action.payload.title) ? x.isSelected = true : null),
-                ]
+                quote: newQuote[0]
             }
         case REMOVE_EXTRA_ADDON:
             const refreshedQuote = removeAddonPrice(insuranceList.quote, action.payload)
             return {
                 ...insuranceList,
-                quote: refreshedQuote[0],
-                addonDetails: [
-                    ...insuranceList.addonDetails,
-                    insuranceList.addonDetails.map((x: any) =>
-                    (x.title === action.payload.title) ? delete x.isSelected : []),
-                ]
+                quote: refreshedQuote[0]
             }
         default:
             return insuranceList;

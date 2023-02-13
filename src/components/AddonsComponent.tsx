@@ -48,12 +48,8 @@ const AddonsComponent: any = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-12 p-3">
-                                            {!addon.hasOwnProperty('isSelected') &&
                                                 <button type="submit" className="btn btn-secondary float-end" onClick={updatePrice.bind(this, addon.title)}>Select this extra</button>
-                                            }
-                                            {addon.hasOwnProperty('isSelected') &&
-                                                <button type="submit" className="btn btn-secondary float-end" onClick={removeAddon.bind(this, addon.title)}>Remove this extra</button>
-                                            }
+                                                <button type="button" className="btn btn-link" onClick={removeAddon.bind(this, addon.title)}>Remove this extra</button>
                                         </div>
                                     </div>
                                 </div>
